@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes drip {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.animate-drip {
+  animation: drip 8s ease-in-out infinite;
+}
+
+/* Oil shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 82, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 82, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 82, 255, 0.6);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 82, 255, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 82, 255, 0.6);
+}
+
+/* TradingView widget overrides */
+.tradingview-widget-container {
+  width: 100% !important;
+}
+
+.tradingview-widget-container__widget {
+  width: 100% !important;
+}
+
+/* Ensure iframes are responsive */
+iframe {
+  max-width: 100%;
+}
+
+/* Body defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030712;
+  overflow-x: hidden;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(0, 82, 255, 0.4);
+  color: white;
+}
+
+/* Focus states */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #0052ff;
+  outline-offset: 2px;
+}
+
+/* Responsive font scaling */
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+}
